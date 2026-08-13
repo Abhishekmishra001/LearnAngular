@@ -1,4 +1,4 @@
-import { Component, numberAttribute, signal } from '@angular/core';
+import { Component, linkedSignal, numberAttribute, signal } from '@angular/core';
 
 @Component({
   selector: 'app-signal-comp',
@@ -7,17 +7,28 @@ import { Component, numberAttribute, signal } from '@angular/core';
   styleUrl: './signal-comp.css',
 })
 export class SignalComp {
-
-  firstname = signal ('Abhishek')
-  constructor(){
-    setTimeout(()=>{
-        this.firstname.set('aman')
-        debugger
-    },4000)
+  firstname = signal('Abhishek');
+  lastName = signal('Mishra');
+  constructor() {
+    setTimeout(() => {
+      this.firstname.set('aman');
+    }, 4000);
   }
-  rollno = signal(0)
+  rollno = signal(0);
 
-  changeValue (){
-    this.rollno.update(val => val +1)
+  changeValue() {
+    this.rollno.update((val) => val + 1);
+  }
+
+  fullName = linkedSignal({
+    source: this.firstname,
+    computation: (newValue, prev) => {
+      const fullName = newValue + '' + this.lastName();
+      return fullName;
+    },
+  });
+
+  changeName() {
+    this.firstname.set('Gaurav');
   }
 }
