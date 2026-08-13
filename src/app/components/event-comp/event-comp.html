@@ -1,0 +1,29 @@
+<p>event-comp works!</p>
+
+
+   <li *ngFor="let item of cityList">{{item}}</li>
+
+   <select name="" id="">
+    
+    @for(item of cityList;track item){
+    <option value="cityList">{{item }}</option>
+    }
+    </select>
+    
+
+    
+        <select name="color" [(ngModel)]="selectedColor">
+            @for (item of color; track $index) {
+        
+            <option [value]="item">{{item}}</option>
+            }
+        </select>
+        
+        <div [style.background-color]="selectedColor" style="height: 100px; width: 100px;">
+        </div>
+
+
+
+
+   
+
