@@ -1,8 +1,9 @@
 import { Component, linkedSignal, numberAttribute, signal } from '@angular/core';
+import { RouterLink, RouterOutlet } from "@angular/router";
 
 @Component({
   selector: 'app-signal-comp',
-  imports: [],
+  imports: [RouterLink, RouterOutlet],
   templateUrl: './signal-comp.html',
   styleUrl: './signal-comp.css',
 })
