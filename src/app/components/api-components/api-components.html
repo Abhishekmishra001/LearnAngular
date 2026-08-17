@@ -1,0 +1,9 @@
+<p>api-components works!</p>
+<div style="height: 80px; width: 85px; margin: 5px; padding: auto;">
+    <button (click)="getUser()">Fetch Users</button>
+</div>
+  @for (item of userList; track $index) {
+    <div style="font-size: large; color: blueviolet;">{{item.name}}</div>
+    <div>{{item.username}}</div>
+  }
+<div>

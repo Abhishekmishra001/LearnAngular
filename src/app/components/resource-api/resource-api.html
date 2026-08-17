@@ -1,0 +1,56 @@
+<div class="resource-container">
+  
+  <div class="header">
+    <div>
+      <h2>Resource API</h2>
+      <p>Users loaded from API</p>
+    </div>
+
+    <button
+      (click)="reloadAPI()"
+      class="reload-btn"
+      [disabled]="userList.isLoading()"
+    >
+      Reload API
+    </button>
+  </div>
+
+  <div class="status-container">
+    <div class="status-item">
+      <span>Has Data</span>
+      <strong [class.success]="userList.hasValue()">
+        {{ userList.hasValue() ? 'Yes' : 'No' }}
+      </strong>
+    </div>
+
+    <div class="status-item">
+      <span>Status</span>
+      <strong [class.loading]="userList.isLoading()">
+        {{ userList.isLoading() ? 'Loading...' : 'Completed' }}
+      </strong>
+    </div>
+  </div>
+
+  @if (userList.isLoading()) {
+    <div class="loading-message">
+      Loading users...
+    </div>
+  }
+
+  @if (userList.hasValue()) {
+    <div class="user-list">
+      @for (item of userList.value(); track item.id) {
+        <div class="user-card">
+          <div class="user-id">
+            #{{ item.id }}
+          </div>
+
+          <div class="user-title">
+            {{ item.title }}
+          </div>
+        </div>
+      }
+    </div>
+  }
+
+</div>

@@ -4,10 +4,14 @@ import { EventComp } from './components/event-comp/event-comp';
 import { SignalComp } from './components/signal-comp/signal-comp';
 import { Homepage } from './components/homepage/homepage';
 import { ReactiveForm } from './components/reactive-form/reactive-form';
+import { ApiComponents } from './components/api-components/api-components';
+import { PostComp } from './components/post-comp/post-comp';
+import { ResourceApi } from './components/resource-api/resource-api';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, EventComp, SignalComp, RouterLinkWithHref,Homepage,ReactiveForm],
+  imports: [RouterOutlet, EventComp, SignalComp, RouterLinkWithHref,Homepage,ReactiveForm,ApiComponents,PostComp,ResourceApi],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -1,0 +1,21 @@
+import { Component, resource } from '@angular/core';
+
+@Component({
+  selector: 'app-resource-api',
+  imports: [],
+  templateUrl: './resource-api.html',
+  styleUrl: './resource-api.css',
+})
+export class ResourceApi {
+  userList = resource({
+    loader: () => {
+      return fetch('https://jsonplaceholder.typicode.com/todos')
+      .then((res) => {
+       return res.json();
+      });
+    },
+  });
+  reloadAPI(){
+    this.userList.reload()
+  }
+}

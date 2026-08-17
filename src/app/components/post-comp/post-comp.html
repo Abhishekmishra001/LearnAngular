@@ -1,0 +1,9 @@
+<p>post-comp works!</p>
+<div>
+    @for (item of getList; track item.id) {
+        <div >
+            <p style="color: black;">{{item.title}}</p>
+        </div>
+    }
+    <button (click)="getAllPost()">Click to show post</button>
+</div>
