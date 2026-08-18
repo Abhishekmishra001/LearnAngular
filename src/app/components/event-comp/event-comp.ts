@@ -1,10 +1,11 @@
 import { NgFor, NgComponentOutlet } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
+import { ProgressBar } from "../progress-bar/progress-bar";
 
 @Component({
   selector: 'app-event-comp',
-  imports: [NgFor,FormsModule],
+  imports: [NgFor, FormsModule, ProgressBar],
   templateUrl: './event-comp.html',
   styleUrl: './event-comp.css',
 })

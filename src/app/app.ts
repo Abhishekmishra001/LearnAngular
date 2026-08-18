@@ -7,11 +7,12 @@ import { ReactiveForm } from './components/reactive-form/reactive-form';
 import { ApiComponents } from './components/api-components/api-components';
 import { PostComp } from './components/post-comp/post-comp';
 import { ResourceApi } from './components/resource-api/resource-api';
+import { ProgressBar } from './components/progress-bar/progress-bar';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, EventComp, SignalComp, RouterLinkWithHref,Homepage,ReactiveForm,ApiComponents,PostComp,ResourceApi],
+  imports: [RouterOutlet, EventComp, SignalComp, RouterLinkWithHref,Homepage,ReactiveForm,ApiComponents,PostComp,ResourceApi,ProgressBar],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

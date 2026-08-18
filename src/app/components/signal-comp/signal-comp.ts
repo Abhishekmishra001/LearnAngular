@@ -1,9 +1,11 @@
+import { UpperCasePipe } from '@angular/common';
 import { Component, linkedSignal, numberAttribute, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from "@angular/router";
+import { ProgressBar } from "../progress-bar/progress-bar";
 
 @Component({
   selector: 'app-signal-comp',
-  imports: [RouterLink, RouterOutlet],
+  imports: [RouterLink, RouterOutlet, ProgressBar],
   templateUrl: './signal-comp.html',
   styleUrl: './signal-comp.css',
 })
