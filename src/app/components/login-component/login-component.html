@@ -1,0 +1,44 @@
+<p>login-component works!</p>
+<div class="login-container">
+  <div class="login-card">
+    <h2>Welcome Back</h2>
+    <p class="subtitle">Please enter your details to sign in</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+      
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input 
+          type="email" 
+          id="email" 
+          formControlName="email" 
+          placeholder="Enter your email"
+          [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+        
+        <div *ngIf="submitted && f['email'].errors" class="error-feedback">
+          <small *ngIf="f['email'].errors['required']">Email is required</small>
+          <small *ngIf="f['email'].errors['email']">Enter a valid email address</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          formControlName="password" 
+          placeholder="Enter your password"
+          [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+        
+        <div *ngIf="submitted && f['password'].errors" class="error-feedback">
+          <small *ngIf="f['password'].errors['required']">Password is required</small>
+          <small *ngIf="f['password'].errors['minLength']">Password must be at least 6 characters</small>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-login">Sign In</button>
+      
+    </form>
+  </div>
+</div>
