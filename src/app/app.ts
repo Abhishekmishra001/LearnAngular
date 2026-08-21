@@ -8,11 +8,12 @@ import { ApiComponents } from './components/api-components/api-components';
 import { PostComp } from './components/post-comp/post-comp';
 import { ResourceApi } from './components/resource-api/resource-api';
 import { ProgressBar } from './components/progress-bar/progress-bar';
+import { LoginComponent } from './components/login-component/login-component';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, EventComp, SignalComp, RouterLinkWithHref,Homepage,ReactiveForm,ApiComponents,PostComp,ResourceApi,ProgressBar],
+  imports: [RouterOutlet, EventComp, SignalComp, RouterLinkWithHref,Homepage,ReactiveForm,ApiComponents,PostComp,ResourceApi,ProgressBar,LoginComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
